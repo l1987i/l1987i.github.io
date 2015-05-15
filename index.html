@@ -1,33 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>index.html</title>
-</head>
-<body>
-<div class="md-section-divider"></div>
+---
+layout: default
+---
 
-<div class="md-section-divider"></div>
+<div class="home">
 
-<h1 data-anchor-id="dhzl" id="indexhtml">index.html</h1>
+  <h1 class="page-heading">Posts</h1>
 
-<hr>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-<p data-anchor-id="dzxb">layout: default</p>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
 
-<div class="md-section-divider"></div>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-<h2 data-anchor-id="69et" id="title-我的blog">title: 我的Blog</h2>
-
-<p data-anchor-id="l1sp"> <br>
- <br>
-</p>
-
-<h1 data-anchor-id="a59s" id="hello-world">Hello World</h1>
-
-<p data-anchor-id="e9dk">I'm hosted with GitHub Pages.</p>
-
-<p data-anchor-id="onkz"> <br>
-</p>
-</body>
-</html>
+</div>
